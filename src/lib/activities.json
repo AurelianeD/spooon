@@ -1,0 +1,22 @@
+[
+ {
+  "name": "Promener son animal",
+  "spoon_number": 1
+ },
+ {
+  "name": "Prendre une douche et veiller au reste de son hygiène personnelle",
+  "spoon_number": 1
+ },
+ {
+  "name": "Préparer un petit dèj",
+  "spoon_number": 1
+ },
+ {
+  "name": "Effectuer un trajet ",
+  "spoon_number": 1
+ },
+ {
+  "name": "Cuisiner un à deux repas",
+  "spoon_number": 2
+ }
+]
