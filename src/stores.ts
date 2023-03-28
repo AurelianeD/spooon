@@ -13,3 +13,4 @@ spoonNumber.subscribe(value =>{
 });
 
 export default spoonNumber;
+export const spoonNumberSelected = writable(0);
