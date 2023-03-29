@@ -19,21 +19,24 @@
 		}
 	];
 	let spoonSelected: number;
+	let activityStyle = "rounded-md p-5 flex flex-row justify-between border-2"
 
 	function onSelectSpoon(spoon: number){
 		spoonSelected = spoon;
-	};
+	}
 
 	function onPressSpoon(spoon: number){
 		spoonNumber.update(n => n - spoon);
 	}
+
+
 </script>
 
 <div>
 	<h1>J'ai effectué une activité...</h1>
 	<div class="flex flex-col gap-6">
 		{#each spoons as spoon}
-			<button class="border-black border-2	rounded-md p-5 flex flex-row justify-between" on:click={() => onSelectSpoon(spoon.number)}>
+			<button class={spoonSelected === spoon.number ? activityStyle + ' border-lightBlue' : activityStyle + ' border-black'} on:click={() => onSelectSpoon(spoon.number)}>
 				{spoon.text}
 				<div class="flex flex-row">
 					{#each Array(spoon.number) as spoonNumber}
