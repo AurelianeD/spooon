@@ -1,11 +1,10 @@
 import {writable} from 'svelte/store';
 import { browser } from "$app/environment";
 
+const defaultValue = '12';
+const stored = browser ? window.localStorage.getItem('spoonNumber') ?? defaultValue : defaultValue;
 
-const defaultSpoonValue = '12';
-const spoonStored = browser ? window.localStorage.getItem('spoonNumber') ?? defaultSpoonValue : defaultSpoonValue;
-
-const spoonNumber = writable(parseInt(spoonStored));
+const spoonNumber = writable(parseInt(stored));
 
 spoonNumber.subscribe(value =>{
 	if(browser){
@@ -14,3 +13,4 @@ spoonNumber.subscribe(value =>{
 });
 
 export default spoonNumber;
+export const spoonNumberSelected = writable(0);
