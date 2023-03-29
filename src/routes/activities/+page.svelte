@@ -1,17 +1,19 @@
 <script lang="ts">
-	import {spoonNumberSelected} from '../../stores';
-	import activities from '$lib/activities';
+	import spoonNumber from '../../stores';
+	let spoons = [1, 2, 3, 4];
 
-	let newActivities = activities;
-
-	let activityFiltered = activities.filter(activity => activity.spoon_number === 2);
-	console.log(activityFiltered);
+	function onPressSpoon(spoon: number){
+		spoonNumber.update(n => n - spoon);
+	}
 </script>
 
 <div>
 	<h1>Activité</h1>
-	{$spoonNumberSelected}
-	{#each activityFiltered as activity}
-		<p>{activity.name}</p>
-	{/each}
+	<div class="flex flex-row">
+		{#each spoons as spoon}
+			<div class="bg-slate-500	border-sm">
+				<button on:click={() => onPressSpoon(spoon)}><a href="/">{spoon} cuillière</a></button>
+			</div>
+		{/each}
+	</div>
 </div>
