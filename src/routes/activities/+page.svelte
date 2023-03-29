@@ -3,19 +3,19 @@
 	let spoons = [
 		{
 			number: 1,
-			text: 'Activité peu fatiguante'
+			text: 'peu fatiguante'
 		},
 		{
 			number: 2,
-			text: 'Activité fatiguante'
+			text: 'fatiguante'
 		},
 		{
 			number: 3,
-			text: 'Activité très fatiguante'
+			text: 'très fatiguante'
 		},
 		{
 			number: 4,
-			text: 'Activité épuisante'
+			text: 'épuisante'
 		}
 	];
 	let spoonSelected: number;
@@ -30,13 +30,15 @@
 </script>
 
 <div>
-	<h1>Combien de cuillière avez vous dépensez ?</h1>
+	<h1>J'ai effectué une activité...</h1>
 	<div class="flex flex-col gap-6">
 		{#each spoons as spoon}
-			<button class="bg-slate-500	border-sm p-10" on:click={() => onSelectSpoon(spoon.number)}>
-				<div>
-					<p>{spoon.number}</p>
-					<p>{spoon.text}</p>
+			<button class="border-black border-2	rounded-md p-5 flex flex-row justify-between" on:click={() => onSelectSpoon(spoon.number)}>
+				{spoon.text}
+				<div class="flex flex-row">
+					{#each Array(spoon.number) as spoonNumber}
+						<img src="/src/lib/assets/spoon.png" alt="spoon" class="w-10 h-10" />
+					{/each}
 				</div>
 			</button>
 		{/each}

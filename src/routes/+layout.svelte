@@ -8,7 +8,7 @@
 	</a>
 	<a href="help">
 		<div>
-			<p class="underline">Aide</p>
+			<p class="underline">A propos</p>
 		</div>
 	</a>
 </div>
