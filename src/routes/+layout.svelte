@@ -1,10 +1,10 @@
 <script>
 	import spoonNumber from '../stores';
-
+	import "../app.css";
 </script>
 
 <div>
-	<p>Mon nombres de cuillières restantes : {$spoonNumber}</p>
+		<a href="/">Accueil</a>
 	<slot />
 </div>
 
