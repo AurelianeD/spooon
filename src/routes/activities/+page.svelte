@@ -1,5 +1,6 @@
 <script lang="ts">
 	import spoonNumber from '../../stores';
+	import iconSpoon from '$lib/assets/spoon.png'
 	let spoons = [
 		{
 			number: 1,
@@ -40,7 +41,7 @@
 				{spoon.text}
 				<div class="flex flex-row">
 					{#each Array(spoon.number) as spoonNumber}
-						<img src="/src/lib/assets/spoon.png" alt="spoon" class="w-10 h-10" />
+						<img src={iconSpoon} alt="spoon" class="w-10 h-10" />
 					{/each}
 				</div>
 			</button>
