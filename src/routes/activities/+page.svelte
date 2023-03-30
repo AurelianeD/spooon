@@ -27,6 +27,9 @@
 
 	function onPressSpoon(spoon: number){
 		spoonNumber.update(n => n - spoon);
+		if( $spoonNumber < 0){
+			spoonNumber.update(n => 0);
+		}
 	}
 
 
