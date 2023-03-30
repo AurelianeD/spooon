@@ -1,19 +1,18 @@
 <script lang="ts">
 	import spoonNumber from '../stores.ts';
-	import {handleTextSpoon} from '../helpers/helpers.ts';
-	import spoon from '$lib/assets/cuilleres.png';
+	import {handleTextSpoon, handleImageSpoon} from '../helpers/helpers.ts';
 
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Spooon</title>
+	<meta name="description" content="Spooon App" />
 </svelte:head>
 
-<div class=" flex flex-col justify-between">
+<div class=" flex flex-col justify-between ">
 	<h1 class="text-3xl font-bold text-center">Mon niveau d'énergie aujourd'hui</h1>
 	<div class="mx-auto flex items-center justify-center">
-		<img src={spoon} alt="">
+		<img id="spoon" src={handleImageSpoon($spoonNumber)} alt="roue de cuillière" class="w-96">
 		<p class="text-4xl absolute">{$spoonNumber}</p>
 	</div>
 	<h1 class="text-2xl font-bold mx-auto flex items-center justify-center text-center">{handleTextSpoon($spoonNumber)}</h1>
