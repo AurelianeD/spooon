@@ -1,7 +1,7 @@
 export function handleTextSpoon(spoonNumber:Number){
     switch(true){
     case spoonNumber < 0:
-        return 'Reposez vous !'
+        return 'Reposez-vous !'
     case spoonNumber === 0:
         return 'Batterie à plat...'
     case spoonNumber >= 1 && spoonNumber <= 3:

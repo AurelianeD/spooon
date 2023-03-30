@@ -3,23 +3,23 @@
 	let spoons = [
 		{
 			number: 1,
-			text: 'peu fatiguante'
+			text: 'Peu fatiguante'
 		},
 		{
 			number: 2,
-			text: 'fatiguante'
+			text: 'Fatiguante'
 		},
 		{
 			number: 3,
-			text: 'très fatiguante'
+			text: 'Très fatiguante'
 		},
 		{
 			number: 4,
-			text: 'épuisante'
+			text: 'Épuisante'
 		}
 	];
 	let spoonSelected: number;
-	let activityStyle = "rounded-md p-5 flex flex-row justify-between border-2"
+	let activityStyle = "rounded-md p-5 flex flex-row justify-between"
 
 	function onSelectSpoon(spoon: number){
 		spoonSelected = spoon;
@@ -33,10 +33,10 @@
 </script>
 
 <div>
-	<h1>J'ai effectué une activité...</h1>
+	<h1 class="text-2xl font-semibold">J'ai effectué une activité...</h1>
 	<div class="flex flex-col gap-6">
 		{#each spoons as spoon}
-			<button class={spoonSelected === spoon.number ? activityStyle + ' border-lightBlue' : activityStyle + ' border-black'} on:click={() => onSelectSpoon(spoon.number)}>
+			<button class={spoonSelected === spoon.number ? activityStyle + ' bg-gradient-to-b from-darkBlue to-lightBlue' : activityStyle + ' border-2 border-lightBlue'} on:click={() => onSelectSpoon(spoon.number)}>
 				{spoon.text}
 				<div class="flex flex-row">
 					{#each Array(spoon.number) as spoonNumber}
@@ -47,7 +47,7 @@
 		{/each}
 	</div>
 
-	<button on:click={() => onPressSpoon(spoonSelected)} class="border-black border-2 p-2 mt-10 mx-auto w-full">
+	<button on:click={() => onPressSpoon(spoonSelected)} class="border-lightBlue border-2 p-2 mt-10 mx-auto w-full">
 		<a href="/">Valider</a>
 	</button>
 </div>
