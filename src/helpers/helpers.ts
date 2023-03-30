@@ -45,5 +45,6 @@ export function handleImageSpoon(spoonNumber:writable<number>){
         case 10: return spoon10;
         case 11: return spoon11;
         case 12: return spoon12;
+        default: return spoon0;
     }
 }
