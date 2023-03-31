@@ -6,7 +6,7 @@
 
 </script>
 <!--//TODO: align bottom-->
-<div class="flex flex-row p-5 justify-between items-center">
+<div class="flex flex-row p-5 justify-between items-center mb-10">
 	{#if $page.url.pathname !== '/'}
 		<a href="/" class="flex flex-row items-center gap-2">
 			<img src={favicon} alt="logo" class="w-8"/>
@@ -20,7 +20,6 @@
 	{#if $page.url.pathname !== '/help'}
 		<a href="help">
 			<div class="flex flex-row gap-2 text-[18px] items-center">
-	<!--			TODO: Ajouter l'icone ? et enlever le soulignement-->
 				<p class="font-century text-xl text-center">À propos</p>
 				<div class="border-2 border-lightBlue rounded-full w-8 flex justify-center">
 					<p class="text-lightBlue">?</p>
