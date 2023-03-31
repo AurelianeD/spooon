@@ -24,5 +24,14 @@
 			</div>
 		</div>
 	</button>
+	<button class="mx-auto flex items-center justify-center mt-4">
+		<div class="h-12 w-40 rounded-md bg-gradient-to-b from-darkBlue to-lightBlue p-[2px]">
+<!--			TODO: fix le bouton en bas de la page-->
+			<div class="flex items-center justify-center h-full w-full bg-white rounded gap-2">
+				<a href="gain">J'ai récupéré</a>
+				<img src="src/lib/assets/zzz.png" alt="">
+			</div>
+		</div>
+	</button>
 </div>
 
