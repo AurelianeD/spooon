@@ -21,5 +21,15 @@
 		title="J'ai dépensé de l'énergie"
 		href="/activities"
 	/>
+	<button
+	class="mx-auto flex items-center justify-center mt-10"
+	on:click={() => onPress()}
+>
+	<div class="h-10 rounded-md bg-gradient-to-b from-darkBlue to-lightBlue p-[2px]">
+		<div class="flex items-center justify-center h-full w-full bg-white rounded px-6">
+			<a href="gain">Je me suis ressourcé.e</a>
+		</div>
+	</div>
+	</button>
 </div>
 
