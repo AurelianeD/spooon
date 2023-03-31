@@ -1,6 +1,7 @@
 <script lang="ts">
 	import spoonNumber from '../../stores';
 	import iconSpoon from '$lib/assets/spoon.png'
+	import Button from "../../components/Button.svelte";
 	let spoons = [
 		{
 			number: 1,
@@ -20,16 +21,25 @@
 		}
 	];
 	let spoonSelected: number;
-	let activityStyle = "rounded-md p-5 flex flex-row justify-between"
+	let activityStyle = "rounded-md p-5 flex flex-row justify-between";
+	let href: string;
 
 	function onSelectSpoon(spoon: number){
 		spoonSelected = spoon;
 	}
 
-	function onPressSpoon(spoon: number){
-		spoonNumber.update(n => n - spoon);
-		if( $spoonNumber < 0){
-			spoonNumber.update(n => 0);
+	function onValidate(spoon: number){
+		if(spoon){
+			if($spoonNumber - spoon < 0){
+				console.log('is	negative');
+				spoonNumber.update(n => 0);
+			}else{
+				spoonNumber.update(n => n - spoon);
+			}
+			return href	= '/';
+		}else{
+			alert('Veuillez sélectionner une activité');
+			return href = '/activities';
 		}
 	}
 
@@ -50,8 +60,12 @@
 			</button>
 		{/each}
 	</div>
-
-	<button on:click={() => onPressSpoon(spoonSelected)} class="border-lightBlue border-2 p-2 mt-10 mx-auto w-full">
-		<a href="/">Valider</a>
-	</button>
+	<Button
+		title="Valider"
+		onPress={() => onValidate(spoonSelected)}
+		{href}
+	/>
+<!--	<button on:click={() => onPressSpoon(spoonSelected)} class="border-lightBlue border-2 p-2 mt-10 mx-auto w-full">-->
+<!--		<a href="/">Valider</a>-->
+<!--	</button>-->
 </div>

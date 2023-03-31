@@ -1,6 +1,7 @@
 <script lang="ts">
 	import spoonNumber from '../stores.ts';
 	import {handleTextSpoon, handleImageSpoon} from '../helpers/helpers.ts';
+	import Button from "../components/Button.svelte";
 
 </script>
 
@@ -16,22 +17,9 @@
 		<p class="text-4xl absolute">{$spoonNumber}</p>
 	</div>
 	<h1 class="text-2xl font-bold mx-auto flex items-center justify-center text-center">{handleTextSpoon($spoonNumber)}</h1>
-	<button class="mx-auto flex items-center justify-center">
-		<div class="h-12 w-80 rounded-md bg-gradient-to-b from-darkBlue to-lightBlue p-[2px]">
-<!--			TODO: fix le bouton en bas de la page-->
-			<div class="flex items-center justify-center h-full w-full bg-white rounded">
-				<a href="activities">J'ai dépensé de l'énergie</a>
-			</div>
-		</div>
-	</button>
-	<button class="mx-auto flex items-center justify-center mt-4">
-		<div class="h-12 w-40 rounded-md bg-gradient-to-b from-darkBlue to-lightBlue p-[2px]">
-<!--			TODO: fix le bouton en bas de la page-->
-			<div class="flex items-center justify-center h-full w-full bg-white rounded gap-2">
-				<a href="gain">J'ai récupéré</a>
-				<img src="src/lib/assets/zzz.png" alt="">
-			</div>
-		</div>
-	</button>
+	<Button
+		title="J'ai dépensé de l'énergie"
+		href="/activities"
+	/>
 </div>
 
