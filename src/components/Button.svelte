@@ -8,8 +8,8 @@
 	class="mx-auto flex items-center justify-center mt-10"
 	on:click={() => onPress()}
 >
-	<div class="h-12 w-80 rounded-md bg-gradient-to-b from-darkBlue to-lightBlue p-[2px]">
-		<div class="flex items-center justify-center h-full w-full bg-white rounded">
+	<div class="h-12 rounded-md bg-gradient-to-b from-darkBlue to-lightBlue p-[2px]">
+		<div class="flex items-center justify-center h-full w-full bg-white rounded px-10">
 			<a {href}>{title}</a>
 		</div>
 	</div>
