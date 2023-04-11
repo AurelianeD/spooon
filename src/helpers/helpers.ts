@@ -48,3 +48,13 @@ export function handleImageSpoon(spoonNumber:writable<number>){
         default: return spoon0;
     }
 }
+
+export function handleStartDayText(energy: number){
+    switch(true){
+        case energy === 1 : return 'Épuisé·e'
+        case energy >= 2 && energy <= 5: return 'Peu reposé·e'
+        case energy >= 6 && energy <= 9: return 'En forme'
+        case energy >= 10 && energy < 12: return 'En pleine forme'
+        case energy === 12: return 'Plein·e d’énergie'
+    }
+}

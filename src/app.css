@@ -7,3 +7,11 @@ h1 {
   @apply mb-10;
   @apply italic;
 }
+
+h2{
+  @apply text-2xl;
+}
+
+p{
+  @apply text-xl;
+}
