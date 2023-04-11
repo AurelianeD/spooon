@@ -9,8 +9,17 @@ import { browser } from "$app/environment";
 let spoonNumberValue = false;
 const defaultValue = '12';
 const stored = browser ? window.localStorage.getItem('spoonNumber') ?? defaultValue : defaultValue;
+const storedBeginDay = browser ? window.localStorage.getItem('beginDay') : 'true';
 
 const spoonNumber = writable(parseInt(stored));
+export const beginDay = writable(storedBeginDay);
+
+beginDay.subscribe(value => {
+	if(browser){
+		console.log(typeof value, 'subscribe');
+		window.localStorage.setItem('beginDay', value);
+	}
+});
 
 spoonNumber.subscribe(value =>{
 	if(browser){
@@ -20,9 +29,9 @@ spoonNumber.subscribe(value =>{
 
 if(spoonNumber !=null){
   spoonNumberValue = true;
-}
+};
 
-export default spoonNumber; 
+export default spoonNumber;
 export const spoonNumberSelected = writable(0);
 
 // ----------------------------------------------------------------------------------------------------------------------------- //
@@ -56,7 +65,7 @@ export const spoonNumberSelected = writable(0);
 // }, 24 * 60 * 60 * 1000); // intervalle d'un jour
 
 // export default spoonNumber;
-// export const spoonNumberSelected = writable(0); 
+// export const spoonNumberSelected = writable(0);
 
 // ----------------------------------------------------------------------------------------------------------------------------- //
 
@@ -111,6 +120,6 @@ export const spoonNumberSelected = writable(0);
 //   resetTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), resetHour, 0, 0);
 //   timeToReset = resetTime.getTime() - now.getTime();
 // }
- 
+
 // export default spoonNumber;
 // export const spoonNumberSelected = writable(0);

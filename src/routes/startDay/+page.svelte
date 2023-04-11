@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from "../../components/Button.svelte";
-	import spoonNumber from '../../stores.ts';
+	import spoonNumber, {beginDay} from '../../stores.ts';
 	let src = '$lib/assets/logo.png';
 	let energies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 	let energySelected = 1;
@@ -12,8 +12,9 @@
 		energySelected = energy;
 	}
 
-	function beginDay() {
+	function onBeginDay() {
 		spoonNumber.set(energySelected);
+		beginDay.set('false');
 	}
 </script>
 
@@ -30,7 +31,7 @@
 			</button>
 		{/each}
 	</div>
-	<Button title="Démarrer la journée" onPress={() => {beginDay()}} href="/"/>
+	<Button title="Démarrer la journée" onPress={() => {onBeginDay()}} href="/"/>
 </div>
 
 <style>

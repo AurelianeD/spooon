@@ -1,7 +1,15 @@
 <script lang="ts">
-	import spoonNumber from '../stores.ts';
+	import spoonNumber, {beginDay} from '../stores.ts';
 	import {handleTextSpoon, handleImageSpoon} from '../helpers/helpers.ts';
 	import Button from "../components/Button.svelte";
+	import { browser } from "$app/environment";
+
+	beginDay.subscribe(value => {
+		if($beginDay === 'true' && browser){
+			window.location.href	= "/startDay";
+		}
+	})
+
 
 </script>
 
