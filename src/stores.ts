@@ -1,29 +1,3 @@
-// import {writable} from 'svelte/store';
-// import { browser } from "$app/environment";
-
-// const defaultValue = '12';
-// const stored = browser ? window.localStorage.getItem('spoonNumber') ?? defaultValue : defaultValue;
-// const storedBeginDay = browser ? window.localStorage.getItem('beginDay') : 'true';
-
-// const spoonNumber = writable(parseInt(stored));
-// export const beginDay = writable(storedBeginDay);
-
-// beginDay.subscribe(value => {
-// 	if(browser){
-// 		console.log(typeof value, 'subscribe');
-// 		window.localStorage.setItem('beginDay', value);
-// 	}
-// });
-
-// spoonNumber.subscribe(value =>{
-// 	if(browser){
-// 		window.localStorage.setItem('spoonNumber', value.toString());
-// 	}
-// });
-
-// export default spoonNumber; 
-// export const spoonNumberSelected = writable(0);
-
 import { writable } from 'svelte/store';
 import { browser } from "$app/environment";
 
@@ -62,39 +36,60 @@ export const spoonNumberSelected = writable(0);
 
 setInterval(resetLocalStorage, 60000);
 
-
 // ----------------------------------------------------------------------------------------------------------------------------- //
 
 // import { writable } from 'svelte/store';
 // import { browser } from "$app/environment";
 
 // const defaultValue = '12';
-// const stored = browser ? window.localStorage.getItem('spoonNumber') ?? defaultValue : defaultValue;
 
-// const spoonNumber = writable(parseInt(stored));
-
-// spoonNumber.subscribe(value => {
-//   if (browser) {
-//     window.localStorage.setItem('spoonNumber', value.toString());
-//   }
-// });
-
-// function resetLocalStorage() {
-//   window.localStorage.setItem('spoonNumber', defaultValue);
+// function resetLocalStorage(hour:number, minute:number) {
+//     const now = new Date();
+//     if (now.getHours() === hour && now.getMinutes() === minute) {
+//         window.localStorage.clear();
+//     }
 // }
 
-// // calculer combien de temps attendre avant la prochaine mise à jour
-// const now = new Date();
-// const resetTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 9, 0, 0);
-// const timeToReset = resetTime.getTime() - now.getTime();
+// const storedSpoonNumber = browser ? window.localStorage.getItem('spoonNumber') ?? defaultValue : defaultValue;
+// const storedHour = browser ? window.localStorage.getItem('spoonNumber') : 5;
+// const storedMinute = browser ? window.localStorage.getItem('spoonNumber') : 0;
+// const storedBeginDay = browser ? window.localStorage.getItem('beginDay') : 'true';
 
-// // exécuter la fonction resetLocalStorage() tous les jours à 9h
-// setInterval(() => {
-//   resetLocalStorage();
-// }, 24 * 60 * 60 * 1000); // intervalle d'un jour
+// const spoonNumber = writable(parseInt(storedSpoonNumber));
+// export const beginDay = writable(storedBeginDay);
+// export const hour = writable(parseInt(storedHour));
+// export const minute = writable(parseInt(storedMinute));
+
+// beginDay.subscribe(value => {
+//     if (browser) {
+//         window.localStorage.setItem('beginDay', value);
+//     }
+// });
+
+// spoonNumber.subscribe(value => {
+//     if (browser) {
+//         window.localStorage.setItem('spoonNumber', value.toString());
+//     }
+// });
+
+// hour.subscribe(value => {
+//     if (browser) {
+//         window.localStorage.setItem('hour', value.toString());
+//     }
+// });
+
+// minute.subscribe(value => {
+//     if (browser) {
+//         window.localStorage.setItem('minute', value.toString());
+//     }
+// });
 
 // export default spoonNumber;
 // export const spoonNumberSelected = writable(0);
+
+// setInterval(() => {
+//     resetLocalStorage(hour, minute);
+// }, 60000);
 
 // ----------------------------------------------------------------------------------------------------------------------------- //
 

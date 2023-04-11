@@ -1,5 +1,7 @@
 <script lang="ts">
 	import spoonNumber, {beginDay} from '../stores.ts';
+	// import {hour} from '../stores.ts';
+	// import {minute} from '../stores.ts';
 	import {handleTextSpoon, handleImageSpoon} from '../helpers/helpers.ts';
 	import Button from "../components/Button.svelte";
 	import { browser } from "$app/environment";
@@ -9,7 +11,6 @@
 			window.location.href	= "/startDay";
 		}
 	})
-
 
 </script>
 
@@ -38,12 +39,25 @@
 			</div>
 		</div>
 	</button>
-	<!-- <div class="flex items-center justify-center mt-10">
-		<label for="spoonNumber">Entrez un nombre :&nbsp</label>
-		<input class="border-2" id="spoonNumber" type="number" bind:value={$spoonNumber} min="0" max="12">
-	</div> -->
+	<!-- <label for="hour">Heure :</label>
+    <input
+      type="number"
+      id="hour"
+      min="0"
+      max="23"
+      bind:value={$hour}
+    />
+    <br />
+    <label for="minute">Minute :</label>
+    <input
+      type="number"
+      id="minute"
+      min="0"
+      max="59"
+      bind:value={$minute}
+    />
+	<button class="mx-auto flex items-center justify-center mt-10 h-10 w-10 border-2" on:click={setUserMorningTime}></button> -->
 </div>
 <div class="flex justify-center mt-4">
-	<!-- <input class="border-darkBlue border-2" type="time" step="3600" bind:value /> -->
 </div>
 
