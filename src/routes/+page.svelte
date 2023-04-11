@@ -23,13 +23,19 @@
 	/>
 	<button
 	class="mx-auto flex items-center justify-center mt-10"
-	on:click={() => onPress()}
 >
-	<div class="h-10 rounded-md bg-gradient-to-b from-darkBlue to-lightBlue p-[2px]">
-		<div class="flex items-center justify-center h-full w-full bg-white rounded px-6">
-			<a href="gain">Je me suis ressourcé.e</a>
+		<div class="h-10 rounded-md bg-gradient-to-b from-darkBlue to-lightBlue p-[2px]">
+			<div class="flex items-center justify-center h-full w-full bg-white rounded px-6">
+				<a href="gain">Je me suis ressourcé.e</a>
+			</div>
 		</div>
-	</div>
 	</button>
+	<div class="flex items-center justify-center mt-10">
+		<label for="spoonNumber">Entrez un nombre :&nbsp</label>
+		<input class="border-2" id="spoonNumber" type="number" bind:value={$spoonNumber} min="0" max="12">
+	</div>
+</div>
+<div class="flex justify-center mt-4">
+	<!-- <input class="border-darkBlue border-2" type="time" step="3600" bind:value /> -->
 </div>
 
