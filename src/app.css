@@ -5,4 +5,5 @@
 h1 {
   @apply text-4xl;
   @apply mb-10;
+  @apply italic;
 }
