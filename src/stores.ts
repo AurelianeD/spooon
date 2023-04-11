@@ -1,12 +1,11 @@
 // Lorsque l'utilisateur arrive sur l'application, il doit renseigner le nombre de cuillères avec lequel il veut commencer sa journée.
 // Une variable est définie en amont à false. Lorsque l'utilisateur valide son nombre de cuillères, la variable passe à true.
-// Ensuite, cette variable est stockée dans le localstorage et si l'utilisateur revient sur l'application dans la journée et que cette varible est à true, alors cela skip cette page en question et amène directement sur la homepage.
+// Ensuite, cette variable est stockée dans le localstorage et si l'utilisateur revient sur l'application dans la journée et que cette variable est à true, alors cela skip cette page en question et amène directement sur la homepage.
 // A partir de minuit, le localstorage se reset (donc la variable se remet à false et redirige vers cette page).
 
 import {writable} from 'svelte/store';
 import { browser } from "$app/environment";
 
-let spoonNumberValue = false;
 const defaultValue = '12';
 const stored = browser ? window.localStorage.getItem('spoonNumber') ?? defaultValue : defaultValue;
 const storedBeginDay = browser ? window.localStorage.getItem('beginDay') : 'true';
@@ -27,11 +26,7 @@ spoonNumber.subscribe(value =>{
 	}
 });
 
-if(spoonNumber !=null){
-  spoonNumberValue = true;
-};
-
-export default spoonNumber;
+export default spoonNumber; 
 export const spoonNumberSelected = writable(0);
 
 // ----------------------------------------------------------------------------------------------------------------------------- //

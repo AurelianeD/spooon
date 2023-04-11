@@ -38,10 +38,10 @@
 			</div>
 		</div>
 	</button>
-	<div class="flex items-center justify-center mt-10">
+	<!-- <div class="flex items-center justify-center mt-10">
 		<label for="spoonNumber">Entrez un nombre :&nbsp</label>
 		<input class="border-2" id="spoonNumber" type="number" bind:value={$spoonNumber} min="0" max="12">
-	</div>
+	</div> -->
 </div>
 <div class="flex justify-center mt-4">
 	<!-- <input class="border-darkBlue border-2" type="time" step="3600" bind:value /> -->
