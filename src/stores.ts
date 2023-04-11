@@ -1,12 +1,43 @@
-// Lorsque l'utilisateur arrive sur l'application, il doit renseigner le nombre de cuillères avec lequel il veut commencer sa journée.
-// Une variable est définie en amont à false. Lorsque l'utilisateur valide son nombre de cuillères, la variable passe à true.
-// Ensuite, cette variable est stockée dans le localstorage et si l'utilisateur revient sur l'application dans la journée et que cette variable est à true, alors cela skip cette page en question et amène directement sur la homepage.
-// A partir de minuit, le localstorage se reset (donc la variable se remet à false et redirige vers cette page).
+// import {writable} from 'svelte/store';
+// import { browser } from "$app/environment";
 
-import {writable} from 'svelte/store';
+// const defaultValue = '12';
+// const stored = browser ? window.localStorage.getItem('spoonNumber') ?? defaultValue : defaultValue;
+// const storedBeginDay = browser ? window.localStorage.getItem('beginDay') : 'true';
+
+// const spoonNumber = writable(parseInt(stored));
+// export const beginDay = writable(storedBeginDay);
+
+// beginDay.subscribe(value => {
+// 	if(browser){
+// 		console.log(typeof value, 'subscribe');
+// 		window.localStorage.setItem('beginDay', value);
+// 	}
+// });
+
+// spoonNumber.subscribe(value =>{
+// 	if(browser){
+// 		window.localStorage.setItem('spoonNumber', value.toString());
+// 	}
+// });
+
+// export default spoonNumber; 
+// export const spoonNumberSelected = writable(0);
+
+import { writable } from 'svelte/store';
 import { browser } from "$app/environment";
 
 const defaultValue = '12';
+
+function resetLocalStorage() {
+    const now = new Date();
+    if (now.getHours() === 5 && now.getMinutes() === 0) {
+        window.localStorage.clear();
+    }
+}
+
+resetLocalStorage();
+
 const stored = browser ? window.localStorage.getItem('spoonNumber') ?? defaultValue : defaultValue;
 const storedBeginDay = browser ? window.localStorage.getItem('beginDay') : 'true';
 
@@ -14,20 +45,23 @@ const spoonNumber = writable(parseInt(stored));
 export const beginDay = writable(storedBeginDay);
 
 beginDay.subscribe(value => {
-	if(browser){
-		console.log(typeof value, 'subscribe');
-		window.localStorage.setItem('beginDay', value);
-	}
+    if(browser){
+        console.log(typeof value, 'subscribe');
+        window.localStorage.setItem('beginDay', value);
+    }
 });
 
 spoonNumber.subscribe(value =>{
-	if(browser){
-		window.localStorage.setItem('spoonNumber', value.toString());
-	}
+    if(browser){
+        window.localStorage.setItem('spoonNumber', value.toString());
+    }
 });
 
 export default spoonNumber; 
 export const spoonNumberSelected = writable(0);
+
+setInterval(resetLocalStorage, 60000);
+
 
 // ----------------------------------------------------------------------------------------------------------------------------- //
 
