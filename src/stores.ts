@@ -21,13 +21,14 @@
 // 	}
 // });
 
-// export default spoonNumber; 
+// export default spoonNumber;
 // export const spoonNumberSelected = writable(0);
 
 import { writable } from 'svelte/store';
 import { browser } from "$app/environment";
 
 const defaultValue = '12';
+const defaultValueBeginDay = 'true';
 
 function resetLocalStorage() {
     const now = new Date();
@@ -39,14 +40,13 @@ function resetLocalStorage() {
 resetLocalStorage();
 
 const stored = browser ? window.localStorage.getItem('spoonNumber') ?? defaultValue : defaultValue;
-const storedBeginDay = browser ? window.localStorage.getItem('beginDay') : 'true';
+const storedBeginDay = browser ? window.localStorage.getItem('beginDay') ?? defaultValueBeginDay : defaultValueBeginDay;
 
 const spoonNumber = writable(parseInt(stored));
-export const beginDay = writable(storedBeginDay);
+const beginDay = writable(storedBeginDay);
 
 beginDay.subscribe(value => {
-    if(browser){
-        console.log(typeof value, 'subscribe');
+    if(browser && value){
         window.localStorage.setItem('beginDay', value);
     }
 });
@@ -57,8 +57,9 @@ spoonNumber.subscribe(value =>{
     }
 });
 
-export default spoonNumber; 
+export default spoonNumber;
 export const spoonNumberSelected = writable(0);
+export { beginDay };
 
 setInterval(resetLocalStorage, 60000);
 
