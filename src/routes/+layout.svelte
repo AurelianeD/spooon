@@ -1,6 +1,7 @@
 <script>
 	import "../app.css";
 	import logo from '$lib/assets/logo.png';
+	import externalLink from '$lib/assets/external_link.svg';
 	import favicon from '$lib/assets/favicon.png';
 	import { page } from '$app/stores';
 
@@ -12,10 +13,8 @@
 		</a>
 		<a href="https://www.spooon.org">
 			<div class="flex flex-row gap-2 text-[18px] items-center">
-				<p class="font-century text-xl text-center">À propos</p>
-				<div class="border-2 border-lightBlue rounded-full w-8 flex justify-center">
-					<p class="text-lightBlue">?</p>
-				</div>
+				<p class="font-century text-xl text-center">Notre site</p>
+				<img class="h-6" src={externalLink} alt="Logo redirection site">
 			</div>
 		</a>
 </div>
