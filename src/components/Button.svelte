@@ -9,8 +9,8 @@
 	on:click={() => onPress()}
 >
 	<div class="rounded-md bg-gradient-to-b from-darkBlue to-lightBlue p-[2px]">
-		<div class="fh-full w-full bg-white rounded">
-			<a class="h-12 px-10 flex items-center justify-center" {href}>{title}</a>
+		<div class="h-full w-full bg-white rounded">
+			<a class="py-3 px-16 flex items-center justify-center" {href}>{title}</a>
 		</div>
 	</div>
 </button>

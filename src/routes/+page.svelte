@@ -30,15 +30,10 @@
 		title="J'ai dépensé de l'énergie"
 		href="/activities"
 	/>
-	<button
-	class="mx-auto flex items-center justify-center mt-10"
->
-		<div class="h-10 rounded-md bg-gradient-to-b from-darkBlue to-lightBlue p-[2px]">
-			<div class="flex items-center justify-center h-full w-full bg-white rounded px-6">
-				<a href="gain">Je me suis ressourcé.e</a>
-			</div>
-		</div>
-	</button>
+	<Button
+		title="J'ai récupéré de l'énergie"
+		href="/gain"
+	/>
 	<!-- <label for="hour">Heure :</label>
     <input
       type="number"
