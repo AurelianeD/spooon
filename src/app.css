@@ -17,18 +17,24 @@
 
 h1 {
   font-family: abeezee, sans-serif;
-  @apply text-2xl;
+  font-size: 1.5em;
+  line-height: 2em;
 }
 
 h2{
-  @apply text-xl;
+  font-family: abeezee, sans-serif;
+  font-size: 1.25em;
 }
 
 p{
-  @apply text-lg;
+  font-family: inter, sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
 }
 
 .cta{
-  @apply text-lg;
+  font-family: inter, sans-serif;
+  font-size: 0.875em;
+  line-height: 1em;
   font-weight: bold;
 }

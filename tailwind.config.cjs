@@ -8,6 +8,7 @@ export default {
       'lightBlue': '#7ACDE5',
       'white': '#FFF',
       'gray': '#ECECEC',
+      'orange': '#E9B705',
     },
     fontFamily: {
       'custom': ['abeezee', 'inter', 'sans-serif'],
