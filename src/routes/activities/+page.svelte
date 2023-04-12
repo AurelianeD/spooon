@@ -2,26 +2,10 @@
 	import spoonNumber from '../../stores';
 	import iconSpoon from '$lib/assets/spoon.png'
 	import Button from "../../components/Button.svelte";
-	let spoons = [
-		{
-			number: 1,
-			text: 'Peu fatiguante'
-		},
-		{
-			number: 2,
-			text: 'Fatiguante'
-		},
-		{
-			number: 3,
-			text: 'Très fatiguante'
-		},
-		{
-			number: 4,
-			text: 'Épuisante'
-		}
-	];
+	import {activitiesLoose} from "$lib/types.ts";
+
+	let activityStyle = "rounded-md p-2 flex flex-row justify-between items-center";
 	let spoonSelected: number;
-	let activityStyle = "rounded-md p-5 flex flex-row justify-between";
 	let href: string;
 
 	function onSelectSpoon(spoon: number){
@@ -31,7 +15,6 @@
 	function onValidate(spoon: number){
 		if(spoon){
 			if($spoonNumber - spoon < 0){
-				console.log('is	negative');
 				spoonNumber.update(n => 0);
 			}else{
 				spoonNumber.update(n => n - spoon);
@@ -43,29 +26,28 @@
 		}
 	}
 
-
 </script>
 
-<div>
-	<h1 class="text-2xl font-semibold">J'ai effectué une activité...</h1>
-	<div class="flex flex-col gap-6">
-		{#each spoons as spoon}
-			<button class={spoonSelected === spoon.number ? activityStyle + ' bg-gradient-to-b from-darkBlue to-lightBlue' : activityStyle + ' border-2 border-lightBlue'} on:click={() => onSelectSpoon(spoon.number)}>
-				{spoon.text}
-				<div class="flex flex-row">
-					{#each Array(spoon.number) as spoonNumber}
-						<img src={iconSpoon} alt="spoon" class="w-10 h-10" />
+<div class="h-full flex flex-col">
+	<h1>J'ai effectué une activité...</h1>
+	<div class="flex flex-col gap-[5%] justify-center h-[80%]">
+		{#each activitiesLoose as spoon}
+			<button
+					class={spoonSelected === spoon.spoon_number ? activityStyle + ' bg-gradient-to-b from-darkBlue to-lightBlue' : activityStyle + ' border-2 border-lightBlue'}
+					on:click={() => onSelectSpoon(spoon.spoon_number)}
+			>
+				<p>{spoon.name}</p>
+				<div class="flex flex-row gap-2">
+					{#each Array(spoon.spoon_number) as spoonNumber}
+						<img src={iconSpoon} alt="spoon" class="w-2 h-10" />
 					{/each}
 				</div>
 			</button>
 		{/each}
 	</div>
-	<Button
-		title="Valider"
-		onPress={() => onValidate(spoonSelected)}
-		{href}
-	/>
-<!--	<button on:click={() => onPressSpoon(spoonSelected)} class="border-lightBlue border-2 p-2 mt-10 mx-auto w-full">-->
-<!--		<a href="/">Valider</a>-->
-<!--	</button>-->
+		<Button
+			title="Valider"
+			onPress={() => onValidate(spoonSelected)}
+			{href}
+		/>
 </div>
