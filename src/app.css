@@ -2,16 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-  @apply text-4xl;
-  @apply mb-10;
-  @apply italic;
+@font-face {
+  font-family: 'abeezee', 'inter', 'sans-serif';
+  src: url('src/lib/assets/fonts/abeezee.ttf');
+  font-style: normal;
+  font-weight: normal;
 }
 
-h2{
+@font-face{
+  font-family: 'inter', 'sans-serif';
+  src: url('src/lib/assets/fonts/inter.ttf');
+  font-style: normal;
+}
+
+h1 {
+  font-family: abeezee, sans-serif;
   @apply text-2xl;
 }
 
-p{
+h2{
   @apply text-xl;
+}
+
+p{
+  @apply text-lg;
+}
+
+.cta{
+  @apply text-lg;
+  font-weight: bold;
 }

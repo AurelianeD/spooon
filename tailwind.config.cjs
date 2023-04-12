@@ -8,6 +8,10 @@ export default {
       'lightBlue': '#7ACDE5',
       'white': '#FFF',
       'gray': '#ECECEC',
+    },
+    fontFamily: {
+      'custom': ['abeezee', 'inter', 'sans-serif'],
+      'sans': ['inter', 'sans-serif'],
     }
   },
   plugins: [],
