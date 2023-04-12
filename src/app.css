@@ -2,16 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'abeezee', 'inter', 'sans-serif';
+  src: url('src/lib/assets/fonts/abeezee.ttf');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: 'inter', 'sans-serif';
+  src: url('src/lib/assets/fonts/inter.ttf');
+  font-style: normal;
+}
+
 h1 {
-  @apply text-4xl;
-  @apply mb-10;
-  @apply italic;
+  font-family: abeezee, sans-serif;
+  font-size: 1.5em;
+  line-height: 2em;
 }
 
 h2{
-  @apply text-2xl;
+  font-family: abeezee, sans-serif;
+  font-size: 1.25em;
 }
 
 p{
-  @apply text-xl;
+  font-family: inter, sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.cta{
+  font-family: inter, sans-serif;
+  font-size: 0.875em;
+  line-height: 1em;
+  font-weight: bold;
 }

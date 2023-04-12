@@ -6,13 +6,15 @@
 	export let onPress: () => void;
 </script>
 
-<button
-	class="mx-auto flex items-center justify-center mt-10"
-	on:click={() => onPress()}
->
+<a {href} class="cta">
+	<button
+			class="mx-auto flex-1 items-center justify-center w-full"
+			on:click={() => onPress()}
+	>
 	<div class="rounded-md bg-gradient-to-b from-{firstColor} to-{secondColor} p-[2px]">
-		<div class="h-full w-full bg-white rounded">
-			<a class="py-3 px-16 flex items-center justify-center" {href}>{title}</a>
+			<div class="flex items-center justify-center bg-white rounded px-10 py-3">
+				{title}
+			</div>
 		</div>
-	</div>
-</button>
+	</button>
+</a>

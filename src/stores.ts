@@ -1,29 +1,3 @@
-// import {writable} from 'svelte/store';
-// import { browser } from "$app/environment";
-
-// const defaultValue = '12';
-// const stored = browser ? window.localStorage.getItem('spoonNumber') ?? defaultValue : defaultValue;
-// const storedBeginDay = browser ? window.localStorage.getItem('beginDay') : 'true';
-
-// const spoonNumber = writable(parseInt(stored));
-// export const beginDay = writable(storedBeginDay);
-
-// beginDay.subscribe(value => {
-// 	if(browser){
-// 		console.log(typeof value, 'subscribe');
-// 		window.localStorage.setItem('beginDay', value);
-// 	}
-// });
-
-// spoonNumber.subscribe(value =>{
-// 	if(browser){
-// 		window.localStorage.setItem('spoonNumber', value.toString());
-// 	}
-// });
-
-// export default spoonNumber;
-// export const spoonNumberSelected = writable(0);
-
 import { writable } from 'svelte/store';
 import { browser } from "$app/environment";
 

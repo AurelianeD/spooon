@@ -10,6 +10,10 @@ export default {
       'gray': '#ECECEC',
       'yellow': '#E5DA7A',
       'orange': '#E9B705',
+    },
+    fontFamily: {
+      'custom': ['abeezee', 'inter', 'sans-serif'],
+      'sans': ['inter', 'sans-serif'],
     }
   },
   plugins: [],
