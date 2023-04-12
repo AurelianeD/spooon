@@ -16,7 +16,6 @@
 
 	function onBeginDay() {
 		spoonNumber.set(energySelected);
-		beginDay.set('false');
 	}
 
 

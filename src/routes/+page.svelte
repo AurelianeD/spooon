@@ -1,18 +1,11 @@
 <script lang="ts">
-	import spoonNumber, {beginDay} from '../stores.ts';
+	import spoonNumber from '../stores.ts';
 	// import {hour} from '../stores.ts';
 	// import {minute} from '../stores.ts';
 	import {handleTextSpoon, handleImageSpoon} from '../helpers/helpers.ts';
 	import Button from "../components/Button.svelte";
 	import Wheel from "../components/Wheel.svelte";
-	import { browser } from "$app/environment";
 	import edit from "$lib/assets/edit.png";
-
-	beginDay.subscribe(value => {
-		if($beginDay === 'true' && browser){
-			window.location.href	= "/startDay";
-		}
-	})
 
 </script>
 
@@ -27,7 +20,7 @@
 		<a href="/startDay">
 			<div class="flex flex-row gap-2 justify-center items-center">
 				<p>Énergie au départ</p>
-				<img src={edit} class="h-6"/>
+				<img src={edit} class="h-6" alt="modifier son nombre de cuillère"/>
 			</div>
 		</a>
 		<div class="h-[80%] flex flex-col justify-center">

@@ -14,16 +14,8 @@ function resetLocalStorage() {
 resetLocalStorage();
 
 const stored = browser ? window.localStorage.getItem('spoonNumber') ?? defaultValue : defaultValue;
-const storedBeginDay = browser ? window.localStorage.getItem('beginDay') ?? defaultValueBeginDay : defaultValueBeginDay;
 
 const spoonNumber = writable(parseInt(stored));
-const beginDay = writable(storedBeginDay);
-
-beginDay.subscribe(value => {
-    if(browser && value){
-        window.localStorage.setItem('beginDay', value);
-    }
-});
 
 spoonNumber.subscribe(value =>{
     if(browser){
@@ -33,7 +25,6 @@ spoonNumber.subscribe(value =>{
 
 export default spoonNumber;
 export const spoonNumberSelected = writable(0);
-export { beginDay };
 
 setInterval(resetLocalStorage, 60000);
 
