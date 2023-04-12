@@ -27,10 +27,14 @@
 	</div>
 	<h1 class="text-2xl font-bold mx-auto flex items-center justify-center text-center">{handleTextSpoon($spoonNumber)}</h1>
 	<Button
+		firstColor="darkBlue"
+		secondColor="lightBlue"
 		title="J'ai dépensé de l'énergie"
 		href="/activities"
 	/>
 	<Button
+		firstColor="orange"
+		secondColor="yellow"
 		title="J'ai récupéré de l'énergie"
 		href="/gain"
 	/>
