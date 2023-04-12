@@ -4,13 +4,15 @@
 	export let onPress: () => void;
 </script>
 
-<button
-	class="mx-auto flex items-center justify-center"
-	on:click={() => onPress()}
->
-	<div class="h-12 rounded-md bg-gradient-to-b from-darkBlue to-lightBlue p-[2px]">
-		<div class="flex items-center justify-center h-full w-full bg-white rounded px-10">
-			<a {href} class="cta">{title}</a>
+<a {href} class="cta">
+	<button
+			class="mx-auto flex-1 items-center justify-center w-full"
+			on:click={() => onPress()}
+	>
+		<div class="rounded-md bg-gradient-to-b from-darkBlue to-lightBlue p-[2px]">
+			<div class="flex items-center justify-center bg-white rounded px-10 py-3">
+				{title}
+			</div>
 		</div>
-	</div>
-</button>
+	</button>
+</a>
