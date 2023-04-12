@@ -6,6 +6,7 @@
 	import Button from "../components/Button.svelte";
 	import Wheel from "../components/Wheel.svelte";
 	import { browser } from "$app/environment";
+	import edit from "$lib/assets/edit.png";
 
 	beginDay.subscribe(value => {
 		if($beginDay === 'true' && browser){
@@ -22,10 +23,16 @@
 
 
 	<div class="flex flex-col justify-center h-full">
-		<h1 class="text-center">Mon niveau d'énergie aujourd'hui</h1>
+		<h1 class="text-center pb-3">Mon niveau d'énergie aujourd'hui</h1>
+		<a href="/startDay">
+			<div class="flex flex-row gap-2 justify-center items-center">
+				<p>Énergie au départ</p>
+				<img src={edit} class="h-6"/>
+			</div>
+		</a>
 		<div class="h-[80%] flex flex-col justify-center">
 			<Wheel />
-			<h1 class="mx-auto flex items-center justify-center text-center">{handleTextSpoon($spoonNumber)}</h1>
+			<h2 class="mx-auto flex items-center justify-center text-center">{handleTextSpoon($spoonNumber)}</h2>
 		</div>
 		<div class="h-[20%] flex flex-col justify-end gap-2">
 			<Button

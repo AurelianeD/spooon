@@ -5,7 +5,7 @@ export interface Activities{
 
 export const activitiesLoose: Activities[] = [
 	{
-		name: 'Peu fatiguane',
+		name: 'Peu fatiguante',
 		spoon_number: 1
 	},
 	{
