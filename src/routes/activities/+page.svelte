@@ -37,7 +37,7 @@
 				<p>{spoon.name}</p>
 				<div class="flex flex-row gap-2">
 					{#each Array(spoon.spoon_number) as spoonNumber}
-						<img src={spoonSelected === spoon.spoon_number? iconSpoonWhite : iconSpoon} alt="spoon" class="w-10 h-10" />
+						<img src={spoonSelected === spoon.spoon_number? iconSpoonWhite : iconSpoon} alt="spoon" class="w-3 h-10" />
 					{/each}
 				</div>
 			</button>
