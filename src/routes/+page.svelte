@@ -16,21 +16,21 @@
 
 
 	<div class="flex flex-col justify-center h-full">
-		<h1 class="text-center pb-3">Mon niveau d'énergie aujourd'hui</h1>
+		<h1 class="text-center pb-3 md:pb-10">Mon niveau d'énergie aujourd'hui</h1>
 		<a href="/startDay">
 			<div class="flex flex-row gap-2 justify-center items-center">
-				<p>Énergie au départ</p>
+				<p class="">Énergie au départ</p>
 				<img src={edit} class="h-6" alt="modifier son nombre de cuillère"/>
 			</div>
 		</a>
 		<div class="h-[80%] flex flex-col justify-center">
 			<Wheel />
-			<h2 class="mx-auto flex items-center justify-center text-center">{handleTextSpoon($spoonNumber)}</h2>
+			<h2 class="mx-auto flex items-center justify-center text-center ">{handleTextSpoon($spoonNumber)}</h2>
 		</div>
-		<div class="h-[20%] flex flex-col justify-end gap-2">
+		<div class="h-[20%] flex flex-col justify-end gap-2 mx-auto w-full">
 			<Button
-		firstColor="darkBlue"
-		secondColor="lightBlue"
+				firstColor="darkBlue"
+				secondColor="lightBlue"
 				title="J'ai dépensé de l'énergie"
 				href="/activities"
 			/>

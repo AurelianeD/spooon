@@ -9,15 +9,15 @@
 </script>
 
 <main>
-	<div class="flex flex-row p-5 justify-between items-center mb-3">
-			<a href="/">
-				<img src={logo} alt="logo" class="w-32"/>
+	<div class="flex flex-row p-5 justify-between items-center mb-3 md:mb-10">
+			<a href="/" class="w-[50%] max-w-[200px]">
+				<img src={logo} alt="logo spooon"/>
 			</a>
 			<div class="flex flex-row gap-6">
 				<a href="https://www.spooon.org">
-						<img class="h-6" src={externalLink} alt="Logo redirection site">
+						<img class="h-6 md:h-10" src={externalLink} alt="redirection site">
 				</a>
-				<img src={help} alt="aide" class="h-6" />
+				<img src={help} alt="aide" class="h-6 md:h-10" />
 			</div>
 	</div>
 	<div class="px-5 flex-1">

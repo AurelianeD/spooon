@@ -23,8 +23,8 @@
 
 <div class="h-full flex flex-col">
 	<h1 class="text-center pb-10">Comment vous sentez-vous aujourd'hui ?</h1>
-	<div class="flex flex-col justify-center h-[80%]">
-		<h2 class="pb-5">Votre quantité d'energie sur une échelle de 12</h2>
+	<div class="flex flex-col justify-center h-[80%] w-full max-w-[500px] mx-auto">
+		<h2 class="pb-5 md:pb-20">Votre quantité d'energie sur une échelle de 12</h2>
 		<p class="text-darkBlue pb-5 text-center">{handleStartDayText(energySelected)}</p>
 		<div class={energiesContainerStyle}>
 			{#each energies as energy}
@@ -36,6 +36,7 @@
 			{/each}
 		</div>
 	</div>
+	<div class="flex flex-col mx-auto w-full">
 		<Button
 				title="Démarrer la journée"
 				onPress={() => {onBeginDay()}}
@@ -43,6 +44,7 @@
 				firstColor="darkBlue"
 				secondColor="lightBlue"
 		/>
+	</div>
 </div>
 
 <style>
