@@ -34,6 +34,7 @@
 				firstColor="darkBlue"
 				secondColor="lightBlue"
 				source={lightningNegative}
+				hasIcon={false}
 				title="J'ai dépensé de l'énergie"
 				href="/activities"
 			/>
@@ -41,6 +42,7 @@
 				firstColor="orange"
 				secondColor="yellow"
 				source={lightningPositive}
+				hasIcon={false}
 				title="J'ai récupéré de l'énergie"
 				href="/gain"
 			/>
