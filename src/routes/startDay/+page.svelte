@@ -7,7 +7,7 @@
 	let energies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 	let energySelected = 1;
 
-	let energiesContainerStyle = "rounded-md flex flex-row border-2 border-lightBlue bg-gray gap-6 overflow-x-scroll pr-32 pl-36 py-5 no-scrollbar";
+	let energiesContainerStyle = "rounded-md flex flex-row border-2 border-lightBlue bg-gray gap-6 overflow-x-scroll px-36 py-5 no-scrollbar";
 	let energySelectedStyle = "border border-darkBlue rounded-full px-4 py-2";
 
 	function onSelectEnergy(energy: number) {
@@ -53,7 +53,6 @@
     .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
-
     /* Hide scrollbar for IE, Edge and Firefox */
     .no-scrollbar {
         -ms-overflow-style: none;  /* IE and Edge */
