@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from "../../components/Button.svelte";
-	import spoonNumber, {beginDay} from '../../stores.ts';
+	import spoonNumber from '../../stores.ts';
 	import {handleStartDayText} from "../../helpers/helpers";
 
 	let src = '$lib/assets/logo.png';
@@ -21,20 +21,28 @@
 
 </script>
 
-<div class="">
+<div class="h-full flex flex-col">
 	<h1 class="text-center pb-10">Comment vous sentez-vous aujourd'hui ?</h1>
-	<h2 class="pb-5">Votre quantité d'energie sur une échelle de 12</h2>
-	<p class="text-darkBlue pb-5 text-center">{handleStartDayText(energySelected)}</p>
-	<div class={energiesContainerStyle}>
-		{#each energies as energy}
-				<div class={energy === energySelected ? energySelectedStyle : "p-2"}>
-					<button on:click={() => onSelectEnergy(energy)} class="text-darkBlue text-xl">
-						{energy}
-					</button>
-				</div>
-		{/each}
+	<div class="flex flex-col justify-center h-[80%]">
+		<h2 class="pb-5">Votre quantité d'energie sur une échelle de 12</h2>
+		<p class="text-darkBlue pb-5 text-center">{handleStartDayText(energySelected)}</p>
+		<div class={energiesContainerStyle}>
+			{#each energies as energy}
+					<div class={energy === energySelected ? energySelectedStyle : "p-2"}>
+						<button on:click={() => onSelectEnergy(energy)} class="text-darkBlue text-xl">
+							{energy}
+						</button>
+					</div>
+			{/each}
+		</div>
 	</div>
-	<Button title="Démarrer la journée" onPress={() => {onBeginDay()}} href="/"/>
+		<Button
+				title="Démarrer la journée"
+				onPress={() => {onBeginDay()}}
+				href="/"
+				firstColor="darkBlue"
+				secondColor="lightBlue"
+		/>
 </div>
 
 <style>
