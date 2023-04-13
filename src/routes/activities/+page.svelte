@@ -9,16 +9,8 @@
 	let spoonSelected: number;
 	let href: string;
 
-	function onSelectSpoon(spoon: {number: number, selected: boolean}){
-		spoons = spoons.map(s => {
-			if (s.number === spoon.number) {
-				s.selected = true;
-			} else {
-				s.selected = false;
-			}
-			return s;
-		});
-		spoonSelected = spoon.number;
+	function onSelectSpoon(spoon: number){
+		spoonSelected = spoon;
 	}
 
 	function onValidate(spoon: number){
@@ -35,34 +27,25 @@
 		}
 	}
 
-	$: {
-		spoons = spoons.map(spoon => {
-			if (spoon.selected) {
-				spoon.icon = iconSpoonWhite;
-			} else {
-				spoon.icon = iconSpoon;
-			}
-			return spoon;
-		});
-	}
-
 </script>
 
 <div class="h-full flex flex-col">
 	<h1>J'ai effectué une activité...</h1>
 	<div class="flex flex-col gap-[5%] justify-center h-[80%]">
 		{#each activitiesLoose as spoon}
-			<button class={spoon.selected ? activityStyle + ' bg-gradient-to-b from-darkBlue to-lightBlue' : activityStyle + ' border-2 border-darkBlue'} on:click={() => onSelectSpoon(spoon)}>
+			<button class={spoonSelected === spoon.spoon_number? activityStyle + ' bg-gradient-to-b from-darkBlue to-lightBlue' : activityStyle + ' border-2 border-darkBlue'} on:click={() => onSelectSpoon(spoon.spoon_number)}>
 				<p>{spoon.name}</p>
 				<div class="flex flex-row gap-2">
 					{#each Array(spoon.spoon_number) as spoonNumber}
-						<img src={spoon.icon} alt="spoon" class="w-10 h-10" />
+						<img src={spoonSelected === spoon.spoon_number? iconSpoonWhite : iconSpoon} alt="spoon" class="w-10 h-10" />
 					{/each}
 				</div>
 			</button>
 		{/each}
 	</div>
 	<Button
+		firstColor="darkBlue"
+		secondColor="lightBlue"
 		title="Valider"
 		onPress={() => onValidate(spoonSelected)}
 		{href}
