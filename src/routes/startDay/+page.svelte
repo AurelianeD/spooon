@@ -41,9 +41,9 @@
 				title="Démarrer la journée"
 				onPress={() => {onBeginDay()}}
 				href="/"
-				noHasIcon={true}
 				firstColor="darkBlue"
 				secondColor="lightBlue"
+				noHasIcon={true}
 		/>
 	</div>
 </div>
