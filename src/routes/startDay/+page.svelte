@@ -44,7 +44,6 @@
 				noHasIcon={true}
 				firstColor="darkBlue"
 				secondColor="lightBlue"
-				noHasIcon={true}
 		/>
 	</div>
 </div>
