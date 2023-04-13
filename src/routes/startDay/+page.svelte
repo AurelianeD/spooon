@@ -44,6 +44,7 @@
 				noHasIcon={true}
 				firstColor="darkBlue"
 				secondColor="lightBlue"
+				noHasIcon={true}
 		/>
 	</div>
 </div>
@@ -53,7 +54,6 @@
     .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
-
     /* Hide scrollbar for IE, Edge and Firefox */
     .no-scrollbar {
         -ms-overflow-style: none;  /* IE and Edge */
