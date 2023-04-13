@@ -13,12 +13,10 @@
 			<a href="/" class="w-[50%] max-w-[200px]">
 				<img src={logo} alt="logo spooon"/>
 			</a>
-			<div class="flex flex-row gap-6">
-				<a href="https://www.spooon.org">
-						<img class="h-6 md:h-10" src={externalLink} alt="redirection site">
-				</a>
-				<img src={help} alt="aide" class="h-6 md:h-10" />
-			</div>
+			<a class="flex gap-3" href="https://www.spooon.org">
+					<p>Aide</p>
+					<img class="h-6 md:h-10" src={externalLink} alt="redirection site">
+			</a>
 	</div>
 	<div class="px-5 flex-1">
 		<slot />
