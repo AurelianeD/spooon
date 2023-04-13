@@ -7,7 +7,7 @@
 	let energies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 	let energySelected = 1;
 
-	let energiesContainerStyle = "rounded-md flex flex-row border-2 border-lightBlue bg-gray gap-6 overflow-x-scroll px-32 py-5 no-scrollbar";
+	let energiesContainerStyle = "rounded-md flex flex-row border-2 border-lightBlue bg-gray gap-6 overflow-x-scroll pr-32 pl-36 py-5 no-scrollbar";
 	let energySelectedStyle = "border border-darkBlue rounded-full px-4 py-2";
 
 	function onSelectEnergy(energy: number) {
@@ -24,7 +24,7 @@
 <div class="h-full flex flex-col">
 	<h1 class="text-center pb-10">Comment vous sentez-vous aujourd'hui ?</h1>
 	<div class="flex flex-col justify-center h-[80%] w-full max-w-[500px] mx-auto">
-		<h2 class="pb-5 md:pb-20">Votre quantité d'energie sur une échelle de 12</h2>
+		<h2 class="pb-5 md:pb-20 text-center">Votre quantité d'énergie sur une échelle de 12</h2>
 		<p class="text-darkBlue pb-5 text-center">{handleStartDayText(energySelected)}</p>
 		<div class={energiesContainerStyle}>
 			{#each energies as energy}
@@ -41,6 +41,7 @@
 				title="Démarrer la journée"
 				onPress={() => {onBeginDay()}}
 				href="/"
+				noHasIcon={true}
 				firstColor="darkBlue"
 				secondColor="lightBlue"
 		/>
