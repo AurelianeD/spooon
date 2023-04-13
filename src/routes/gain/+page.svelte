@@ -6,7 +6,7 @@
 	import {activitiesGain} from "$lib/types.ts";
 	import lightningPositive from "$lib/assets/lightningPositive.png";
 
-	let activityStyle = "rounded-md p-2 flex flex-row justify-between items-center";
+	let activityStyle = "rounded-md p-2 flex flex-row justify-between items-center max-w-[400px] w-full mx-auto md:p-5";
 	let spoonSelected: number;
 	let href: string;
 
@@ -31,14 +31,14 @@
 </script>
 
 <div class="h-full flex flex-col">
-	<h1>J'ai effectué une activité...</h1>
+	<h1 class="md:text-center">J'ai effectué une activité...</h1>
 	<div class="flex flex-col gap-[5%] justify-center h-[80%]">
 		{#each activitiesGain as spoon}
 			<button class={spoonSelected === spoon.spoon_number? activityStyle + ' bg-gradient-to-b from-orange to-yellow' : activityStyle + ' border-2 border-orange'} on:click={() => onSelectSpoon(spoon.spoon_number)}>
 				<p>{spoon.name}</p>
 				<div class="flex flex-row gap-2">
 					{#each Array(spoon.spoon_number) as spoonNumber}
-						<img src={spoonSelected === spoon.spoon_number? iconSpoonWhite : iconSpoonOrange} alt="spoon" class="w-10 h-10" />
+						<img src={spoonSelected === spoon.spoon_number? iconSpoonWhite : iconSpoonOrange} alt="spoon" class="w-2 h-10" />
 					{/each}
 				</div>
 			</button>
