@@ -6,6 +6,8 @@
 	import Button from "../components/Button.svelte";
 	import Wheel from "../components/Wheel.svelte";
 	import edit from "$lib/assets/edit.png";
+	import lightningNegative from "$lib/assets/lightningNegative.png";
+	import lightningPositive from "$lib/assets/lightningPositive.png";
 
 </script>
 
@@ -31,14 +33,16 @@
 			<Button
 				firstColor="darkBlue"
 				secondColor="lightBlue"
+				source={lightningNegative}
 				title="J'ai dépensé de l'énergie"
 				href="/activities"
 			/>
 			<Button
-		firstColor="orange"
-		secondColor="yellow"
-					title="Je me suis ressourcé.e"
-					href="/gain"
+				firstColor="orange"
+				secondColor="yellow"
+				source={lightningPositive}
+				title="J'ai récupéré de l'énergie"
+				href="/gain"
 			/>
 		</div>
 		<!-- <label for="hour">Heure :</label>
