@@ -34,7 +34,8 @@ p{
 
 .cta{
   font-family: inter, sans-serif;
-  font-size: 0.875em;
+  font-size: 0.875rem;
   line-height: 1em;
   font-weight: bold;
+  @apply uppercase;
 }

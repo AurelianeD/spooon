@@ -17,7 +17,9 @@
 				<a href="https://www.spooon.org">
 						<img class="h-6" src={externalLink} alt="Logo redirection site">
 				</a>
-				<img src={help} alt="aide" class="h-6" />
+				<a href="/help">
+					<img src={help} alt="aide" class="h-6" />
+				</a>
 			</div>
 	</div>
 	<div class="px-5 flex-1">

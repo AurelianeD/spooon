@@ -4,6 +4,7 @@
 	import iconSpoonWhite from '$lib/assets/spoonWhite.png';
 	import Button from "../../components/Button.svelte";
 	import {activitiesGain} from "$lib/types.ts";
+	import lightningPositive from "$lib/assets/lightningPositive.png";
 
 	let activityStyle = "rounded-md p-2 flex flex-row justify-between items-center";
 	let spoonSelected: number;
@@ -46,7 +47,9 @@
 	<Button
 		firstColor="orange"
 		secondColor="yellow"
+		source={lightningPositive}
 		title="Valider"
+		noHasIcon={true}
 		onPress={() => onValidate(spoonSelected)}
 		{href}
 	/>
