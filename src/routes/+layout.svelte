@@ -13,9 +13,9 @@
 			<a href="/" class="w-[50%] max-w-[200px]">
 				<img src={logo} alt="logo spooon"/>
 			</a>
-			<a class="flex gap-3" href="https://www.spooon.org">
-					<p>Aide</p>
-					<img class="h-6 md:h-10" src={externalLink} alt="redirection site">
+			<a class="flex gap-2" href="https://www.spooon.org">
+					<p class="text-darkBlue">Aide</p>
+					<img class="h-6 md:h-10" src={help} alt="redirection site">
 			</a>
 	</div>
 	<div class="px-5 flex-1">
