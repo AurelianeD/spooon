@@ -9,8 +9,8 @@
 </script>
 
 <main>
-	<div class="flex flex-row p-5 justify-between items-center mb-3">
-			<a href="/" class="w-[50%] max-w-[200px]">
+	<div class="flex flex-row p-5 gap-6 justify-between items-center mb-3">
+			<a href="/" class="w-[40%] max-w-[200px]">
 				<img src={logo} alt="logo spooon"/>
 			</a>
 			<a class="flex gap-2 items-center" href="/help">
