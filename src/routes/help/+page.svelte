@@ -11,7 +11,7 @@
 	<div class="flex flex-col h-full gap-6">
 		<h2 class="pb-3 md:pb-10 mt-6">Mieux gérer votre fatigue</h2>
         <p>Spooon, c’est l’application qui vous permet de mieux gérer votre <span class="font-bold">réservoir d’énergie.</span></p>
-        <p>Basée sur <a class="text-darkBlue underline" href="https://butyoudontlooksick.com/articles/written-by-christine/the-spoon-theory/">la théorie des cuillères de Christine Miserandino</a>, Spooon vous accompagne <span class="font-bold">tout au long de vos journées.</span></p>
+        <p>Basée sur <a class="text-darkBlue underline" href="https://fr.wikipedia.org/wiki/Th%C3%A9orie_des_cuill%C3%A8res">la théorie des cuillères de Christine Miserandino</a>, Spooon vous accompagne <span class="font-bold">tout au long de vos journées.</span></p>
         <p>Le principe est simple, à chaque activité effectuée dans votre journée, dites à Spooon <span class="font-bold">combien d’énergie</span> vous avez dépensé en sélectionnant 1, 2, 3, ou 4 cuillères. 1 cuillère correspond à une <span class="font-bold">unité d’énergie.</span></p>
         <div class="flex flex-col gap-1">
             <p>Savoir si nous sommes fatigués, c’est parfois difficile. Il existe plusieurs <span class="font-bold">signes de fatigue</span>, en voici quelques exemples :</p>
