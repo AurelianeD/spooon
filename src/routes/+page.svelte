@@ -21,8 +21,8 @@
 		<h1 class="text-center pb-3 md:pb-10">Mon niveau d'énergie aujourd'hui</h1>
 		<a href="/startDay">
 			<div class="flex flex-row gap-2 justify-center items-center">
-				<p class="">Énergie au départ</p>
 				<img src={edit} class="h-6" alt="modifier son nombre de cuillère"/>
+				<p class="text-darkBlue">Définir mon énergie au réveil</p>
 			</div>
 		</a>
 		<div class="h-[80%] flex flex-col justify-center">

@@ -9,12 +9,12 @@
 </script>
 
 <main>
-	<div class="flex flex-row p-5 justify-between items-center mb-3 md:mb-10">
+	<div class="flex flex-row p-5 justify-between items-center mb-3">
 			<a href="/" class="w-[50%] max-w-[200px]">
 				<img src={logo} alt="logo spooon"/>
 			</a>
-			<a class="flex gap-2" href="https://www.spooon.org">
-					<p class="text-darkBlue">Aide</p>
+			<a class="flex gap-2 items-center" href="/help">
+					<p class="text-darkBlue">En savoir plus</p>
 					<img class="h-6 md:h-10" src={help} alt="redirection site">
 			</a>
 	</div>
