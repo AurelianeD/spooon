@@ -21,8 +21,8 @@
 		<h1 class="text-center pb-3 md:pb-10">Mon niveau d'énergie aujourd'hui</h1>
 		<a href="/startDay">
 			<div class="flex flex-row gap-2 justify-center items-center">
-				<p class="">Énergie au départ</p>
 				<img src={edit} class="h-6" alt="modifier son nombre de cuillère"/>
+				<p class="text-darkBlue">Définir mon énergie au réveil</p>
 			</div>
 		</a>
 		<div class="h-[80%] flex flex-col justify-center">
@@ -31,8 +31,8 @@
 		</div>
 		<div class="h-[20%] flex flex-col justify-end gap-2 mx-auto w-full">
 			<Button
-				firstColor="darkBlue"
-				secondColor="lightBlue"
+				firstColor="pink"
+				secondColor="orange"
 				source={lightningNegative}
 				hasIcon={false}
 				title="J'ai dépensé de l'énergie"
@@ -40,8 +40,8 @@
 				disabled={$spoonNumber	=== 0}
 			/>
 			<Button
-				firstColor="orange"
-				secondColor="yellow"
+				firstColor="darkBlue"
+				secondColor="lightBlue"
 				source={lightningPositive}
 				hasIcon={false}
 				title="J'ai récupéré de l'énergie"

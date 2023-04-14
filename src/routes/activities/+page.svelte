@@ -1,6 +1,6 @@
 <script lang="ts">
 	import spoonNumber from '../../stores';
-	import iconSpoon from '$lib/assets/spoon.png';
+	import iconSpoonOrange from '$lib/assets/spoonOrange.png';
 	import iconSpoonWhite from '$lib/assets/spoonWhite.png';
 	import Button from "../../components/Button.svelte";
 	import {activitiesLoose} from "$lib/types.ts";
@@ -31,8 +31,9 @@
 </script>
 
 <div class="h-full flex flex-col">
-	<h1 class="md:text-center">J'ai effectué une activité...</h1>
+	<h1 class="text-center">Dépense d'énergie</h1>
 	<div class="flex flex-col gap-[5%] justify-center h-[80%]">
+		<p class="md:text-center">J'ai effectué une activité...</p>
 		{#each activitiesLoose as spoon}
 			{#if $spoonNumber - spoon.spoon_number < 0}
 				<div class={activityStyle + " bg-gray border-2 border-gray2"}>
@@ -45,13 +46,13 @@
 				</div>
 				{:else}
 				<button
-						class={spoonSelected === spoon.spoon_number? activityStyle + ' bg-gradient-to-b from-darkBlue to-lightBlue' : activityStyle + ' border-2 border-darkBlue'}
+						class={spoonSelected === spoon.spoon_number? activityStyle + ' bg-gradient-to-b from-pink to-orange' : activityStyle + ' border-2 border-orange'}
 						on:click={() => onSelectSpoon(spoon.spoon_number)}
 				>
-					<p>{spoon.name}</p>
+					<p class:text-white={spoonSelected === spoon.spoon_number}>{spoon.name}</p>
 					<div class="flex flex-row gap-2">
 						{#each Array(spoon.spoon_number) as spoonNumber}
-							<img src={spoonSelected === spoon.spoon_number ? iconSpoonWhite : iconSpoon} alt="spoon" class="w-2 h-10" />
+							<img src={spoonSelected === spoon.spoon_number ? iconSpoonWhite : iconSpoonOrange} alt="spoon" class="w-2 h-10" />
 						{/each}
 					</div>
 				</button>
@@ -59,8 +60,8 @@
 		{/each}
 	</div>
 	<Button
-		firstColor="darkBlue"
-		secondColor="lightBlue"
+		firstColor="pink"
+		secondColor="orange"
 		source={lightningNegative}
 		title="Valider"
 		noHasIcon={true}
