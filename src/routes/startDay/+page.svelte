@@ -4,8 +4,8 @@
 	import {handleStartDayText} from "../../helpers/helpers";
 
 	let src = '$lib/assets/logo.png';
-	let energies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-	let energySelected = 1;
+	let energies = [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+	let energySelected = 12;
 
 	let energiesContainerStyle = "rounded-md flex flex-row border-2 border-lightBlue bg-gray gap-6 overflow-x-scroll px-36 py-5 no-scrollbar";
 	let energySelectedStyle = "border border-darkBlue rounded-full px-4 py-2";
