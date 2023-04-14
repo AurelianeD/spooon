@@ -34,14 +34,25 @@
 	<h1 class="md:text-center">J'ai effectué une activité...</h1>
 	<div class="flex flex-col gap-[5%] justify-center h-[80%]">
 		{#each activitiesGain as spoon}
-			<button class={spoonSelected === spoon.spoon_number? activityStyle + ' bg-gradient-to-b from-orange to-yellow' : activityStyle + ' border-2 border-orange'} on:click={() => onSelectSpoon(spoon.spoon_number)}>
-				<p>{spoon.name}</p>
-				<div class="flex flex-row gap-2">
-					{#each Array(spoon.spoon_number) as spoonNumber}
-						<img src={spoonSelected === spoon.spoon_number? iconSpoonWhite : iconSpoonOrange} alt="spoon" class="w-2 h-10" />
-					{/each}
+			{#if $spoonNumber + spoon.spoon_number > 12}
+				<div class={activityStyle + " bg-gray border-2 border-gray2"}>
+					<p class="text-gray700">{spoon.name}</p>
+					<div class="flex flex-row gap-2">
+						{#each Array(spoon.spoon_number) as spoonNumber}
+							<img src={iconSpoonWhite} alt="spoon" class="w-2 h-10" />
+						{/each}
+					</div>
 				</div>
-			</button>
+			{:else}
+				<button class={spoonSelected === spoon.spoon_number? activityStyle + ' bg-gradient-to-b from-orange to-yellow' : activityStyle + ' border-2 border-orange'} on:click={() => onSelectSpoon(spoon.spoon_number)}>
+					<p>{spoon.name}</p>
+					<div class="flex flex-row gap-2">
+						{#each Array(spoon.spoon_number) as spoonNumber}
+							<img src={spoonSelected === spoon.spoon_number? iconSpoonWhite : iconSpoonOrange} alt="spoon" class="w-2 h-10" />
+						{/each}
+					</div>
+				</button>
+			{/if}
 		{/each}
 	</div>
 	<Button

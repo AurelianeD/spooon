@@ -6,7 +6,7 @@ const defaultValueBeginDay = 'true';
 
 function resetLocalStorage() {
     const now = new Date();
-    if (now.getHours() === 5 && now.getMinutes() === 0) {
+    if (now.getHours() === 5 && now.getMinutes() === 0 && browser) {
         window.localStorage.clear();
     }
 }

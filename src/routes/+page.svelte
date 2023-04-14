@@ -37,6 +37,7 @@
 				hasIcon={false}
 				title="J'ai dépensé de l'énergie"
 				href="/activities"
+				disabled={$spoonNumber	=== 0}
 			/>
 			<Button
 				firstColor="orange"
@@ -45,6 +46,7 @@
 				hasIcon={false}
 				title="J'ai récupéré de l'énergie"
 				href="/gain"
+				disabled={$spoonNumber	=== 12}
 			/>
 		</div>
 		<!-- <label for="hour">Heure :</label>

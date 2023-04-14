@@ -8,7 +8,7 @@
 			id="spoon"
 			src={handleImageSpoon($spoonNumber)}
 			alt="roue de cuillière"
-			class="min-w-[50px] w-[60%]"
+			class="min-w-[50px] w-[60%] max-w-[500px]"
 	>
 	<p class="absolute md:text-2xl">{$spoonNumber}</p>
 </div>
