@@ -31,8 +31,8 @@
 		</div>
 		<div class="h-[20%] flex flex-col justify-end gap-2 mx-auto w-full">
 			<Button
-				firstColor="darkBlue"
-				secondColor="lightBlue"
+				firstColor="pink"
+				secondColor="orange"
 				source={lightningNegative}
 				hasIcon={false}
 				title="J'ai dépensé de l'énergie"
@@ -40,8 +40,8 @@
 				disabled={$spoonNumber	=== 0}
 			/>
 			<Button
-				firstColor="orange"
-				secondColor="yellow"
+				firstColor="darkBlue"
+				secondColor="lightBlue"
 				source={lightningPositive}
 				hasIcon={false}
 				title="J'ai récupéré de l'énergie"

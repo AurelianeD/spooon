@@ -11,7 +11,8 @@ export default {
       'gray2': '#DEDEDE',
       'gray700': '#585858',
       'yellow': '#E5DA7A',
-      'orange': '#E9B705',
+      'pink': '#FF7070',
+      'orange': '#FFB800',
     },
     fontFamily: {
       'custom': ['abeezee', 'inter', 'sans-serif'],
