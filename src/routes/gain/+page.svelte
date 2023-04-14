@@ -3,6 +3,7 @@
 	import iconSpoon from '$lib/assets/spoon.png';
 	import iconSpoonWhite from '$lib/assets/spoonWhite.png';
 	import Button from "../../components/Button.svelte";
+	import BorderGradient from "../../components/BorderGradient.svelte";
 	import {activitiesGain} from "$lib/types.ts";
 	import lightningPositive from "$lib/assets/lightningPositive.png";
 
@@ -45,14 +46,19 @@
 					</div>
 				</div>
 			{:else}
-				<button class={spoonSelected === spoon.spoon_number? activityStyle + ' bg-gradient-to-b from-darkBlue to-lightBlue' : activityStyle + ' border-2 border-darkBlue'} on:click={() => onSelectSpoon(spoon.spoon_number)}>
-					<p class:text-white={spoonSelected === spoon.spoon_number}>{spoon.name}</p>
-					<div class="flex flex-row gap-2">
-						{#each Array(spoon.spoon_number) as spoonNumber}
-							<img src={spoonSelected === spoon.spoon_number? iconSpoonWhite : iconSpoon} alt="spoon" class="w-2 h-10" />
-						{/each}
-					</div>
-				</button>
+				<BorderGradient firstColor="darkBlue" secondColor="lightBlue">
+					<button
+							class={spoonSelected === spoon.spoon_number? activityStyle + ' bg-gradient-to-b from-darkBlue to-lightBlue' : activityStyle}
+							on:click={() => onSelectSpoon(spoon.spoon_number)}
+					>
+						<p class:text-white={spoonSelected === spoon.spoon_number}>{spoon.name}</p>
+						<div class="flex flex-row gap-2">
+							{#each Array(spoon.spoon_number) as spoonNumber}
+								<img src={spoonSelected === spoon.spoon_number? iconSpoonWhite : iconSpoon} alt="spoon" class="w-2 h-10" />
+							{/each}
+						</div>
+					</button>
+				</BorderGradient>
 			{/if}
 		{/each}
 	</div>
