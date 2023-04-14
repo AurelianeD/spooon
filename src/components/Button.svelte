@@ -26,7 +26,10 @@
 				on:click={() => onPress()}
 		>
 			<div class="rounded-md bg-gradient-to-b from-{firstColor} to-{secondColor} p-[2px]">
-				<div class="flex items-center justify-center bg-white rounded py-2">
+				<div
+						class="flex items-center justify-center bg-white rounded py-2"
+						class:py-3={noHasIcon}
+				>
 					<img
 							class:hidden={noHasIcon}
 							class="max-h-[20px] md:max-h-[30px] mr-2"
