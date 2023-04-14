@@ -51,7 +51,7 @@
 							class={spoonSelected === spoon.spoon_number? activityStyle + ' bg-gradient-to-b from-darkBlue to-lightBlue' : activityStyle}
 							on:click={() => onSelectSpoon(spoon.spoon_number)}
 					>
-						<p class:text-white={spoonSelected === spoon.spoon_number}>{spoon.name}</p>
+						<p>{spoon.name}</p>
 						<div class="flex flex-row gap-2">
 							{#each Array(spoon.spoon_number) as spoonNumber}
 								<img src={spoonSelected === spoon.spoon_number? iconSpoonWhite : iconSpoon} alt="spoon" class="w-2 h-10" />
